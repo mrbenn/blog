@@ -39,3 +39,13 @@ gem 'devise', '~> 3.4.1'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
+
