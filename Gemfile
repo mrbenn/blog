@@ -47,4 +47,5 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'selenium-webdriver'
+  gem 'guard-rspec'
 end
