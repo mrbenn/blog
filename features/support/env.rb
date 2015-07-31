@@ -19,8 +19,13 @@ Capybara.configure do |config|
   config.ignore_hidden_elements = false
 end
 
-  Before do
-    visit 'http://localhost:3000'
-  end
+Before do
+  visit 'http://localhost:3000'
+end
+  
+  
+After do
+  click_on 'Logout'
+end
   
   
