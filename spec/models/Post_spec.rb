@@ -13,5 +13,4 @@ describe Post, :type => :model do
     expect(build(:post, body: nil)).to_not be_valid
   end
 
-  
 end

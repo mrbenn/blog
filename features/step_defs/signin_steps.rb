@@ -1,9 +1,5 @@
 require 'capybara/cucumber'
 
-Given(/^I'm on the Blog home page$/) do
-  visit ("localhost:3000")
-end
-
 When(/^I select the Admin login$/) do
   click_on 'Admin Login'
 end
@@ -15,6 +11,5 @@ When(/^enter valid Admin login details$/) do
 end
 
 Then(/^I am logged in as an Admin user$/) do
-   page.should have_content 'Signed in successfully.'
-end
-    
+   expect have_content 'Signed in successfully.'
+end  

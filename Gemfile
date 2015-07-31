@@ -48,4 +48,5 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'selenium-webdriver'
   gem 'guard-rspec'
+  gem 'chromedriver-helper', '~> 1.0.0'
 end

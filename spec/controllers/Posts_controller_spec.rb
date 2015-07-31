@@ -10,31 +10,32 @@ require 'spec_helper'
       expect(response).to have_http_status(200)
     end
     
-    it "invalid post" do
-      post = :post
+    it "creates an invalid post" do
+      #post = :post
+      #expect(build(:post, title: nil)).to_not be_valid
+    end
+    
+    
+    it "creates an invalid user" do
+      #@controller = Post.new
+      @controller = Post.new
       expect(build(:post, title: nil)).to_not be_valid
+      
+      #userToJson = user.to_json
+      #passToJson = user.to_json
+      
+      #array = {}
+      
+      #userToJson = user.email
+      #passToJson = user.password
+      
+      #expect(userToJson).to eq("ben@ben.com")
+      #expect(passToJson).to eq("testtest")
     end
     
-    
-    it "should create a new user" do
-      user = create (:user)
-      
-      userToJson = user.to_json
-      passToJson = user.to_json
-      
-      array = {}
-      
-      userToJson = user.email
-      passToJson = user.password
-      
-      expect(userToJson).to eq( "ben@ben.com")
-      expect(passToJson).to eq("testtest")
+    it "create a comment" do      
+      #expect(build(:post)).to_not be_valid
     end
-    
-    it "redirects to home " do
-      
-      
-    end
-    
+
   end
 end
