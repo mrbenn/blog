@@ -22,3 +22,13 @@ end
 Then(/^the new post is added$/) do
   expect have_content 'Submitted less than a minute Ago | Edit | Delete'
 end
+
+#New Post not available
+
+When(/^not logged in as admin$/) do
+  expect have_content("Admin Login")  
+end
+
+Then(/^the New Post button is not available$/) do
+  expect(page).to_not have_button("New Post") 
+end
