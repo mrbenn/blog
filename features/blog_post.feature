@@ -9,8 +9,8 @@ Feature: Blog Post
 #		And select the create post button
 #		Then the new post is added
 	
-	Scenario:  Not able to Add a new Blog Post
+#	Scenario:  Not able to Add a new Blog Post
 		
 		
-		When not logged in as admin
-		Then the New Post button is not available 
+#		When not logged in as admin
+#		Then the New Post button is not available 
