@@ -24,8 +24,6 @@ Before do
 end
   
   
-#After do
-#  click_on 'Logout'
-#end
-  
-  
+After do
+  #ßpage.driver.browser.close
+end

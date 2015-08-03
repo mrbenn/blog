@@ -1,4 +1,4 @@
-@dev
+@postcomm
 require 'capybara/cucumber'
 
 Given(/^a blog post is present on the blog post page$/) do
@@ -8,7 +8,7 @@ Given(/^a blog post is present on the blog post page$/) do
   fill_in 'Password', :with => 'testtest'
   click_on 'Log in'
   click_on 'New Post'
-  fill_in 'post_title', :with => 'A New Post'
+  fill_in 'post_title', :with => 'New Post'
   fill_in 'post_body', :with => 'Body'
   click_on 'Create Post'
  

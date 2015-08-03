@@ -1,3 +1,5 @@
+@newblog
+
 #Add a new post
 When(/^I am logged in as Admin$/) do
   click_on 'Admin Login'
@@ -10,7 +12,7 @@ When(/^I select the new post button$/) do
   click_on 'New Post'
 end
 
-When(/^I fill in the title with body$/) do
+When(/^I fill in the title and body$/) do
   fill_in 'post_title', :with => 'A New Post'
   fill_in 'post_body', :with => 'Body'
 end
