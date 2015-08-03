@@ -11,7 +11,7 @@ When(/^I select the new post button$/) do
 end
 
 When(/^I fill in the title with body$/) do
-  fill_in 'post_title', :with => 'A new comment'
+  fill_in 'post_title', :with => 'A New Post'
   fill_in 'post_body', :with => 'Body'
 end
 
@@ -21,6 +21,7 @@ end
 
 Then(/^the new post is added$/) do
   expect have_content 'Submitted less than a minute Ago | Edit | Delete'
+  click_on 'Logout'
 end
 
 #New Post not available

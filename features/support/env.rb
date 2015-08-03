@@ -24,8 +24,8 @@ Before do
 end
   
   
-After do
-  click_on 'Logout'
-end
+#After do
+#  click_on 'Logout'
+#end
   
   

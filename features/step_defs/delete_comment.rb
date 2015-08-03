@@ -1,3 +1,4 @@
+require 'capybara/cucumber'
 
 #Cannot Delete a Comment
 
@@ -22,7 +23,7 @@ end
 
 When(/^I am on the comment page on a post$/) do
   click_link('A New Post')
-  expect(page).to have_text("Delete")  
+  
 end
 
 When(/^select the Delete button$/) do
@@ -37,6 +38,5 @@ When(/^I ok the dialog$/) do
 end
 
 Then(/^the comment is deleted$/) do
- 
   expect(page).to_not have_text("A new comment")  
 end

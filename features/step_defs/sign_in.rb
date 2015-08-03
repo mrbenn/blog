@@ -12,4 +12,5 @@ end
 
 Then(/^I am logged in as an Admin user$/) do
    expect have_content 'Signed in successfully.'
-end  
+   click_on 'Logout'
+end
