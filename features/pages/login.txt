@@ -1,0 +1,8 @@
+require 'site_prism'
+
+	class Login < SitePrism:Page
+
+  		element :Login, "button"
+  		element :AdminLogin, "button"
+      
+	end

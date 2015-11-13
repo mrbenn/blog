@@ -10,7 +10,7 @@ end
 
 When(/^I select the new post button$/) do
   click_on 'New Post'
-end
+end 
 
 When(/^I fill in the title and body$/) do
   fill_in 'post_title', :with => 'A New Post'

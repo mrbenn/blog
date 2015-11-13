@@ -49,4 +49,5 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'guard-rspec'
   gem 'chromedriver-helper', '~> 1.0.0'
+  gem 'site_prism'
 end

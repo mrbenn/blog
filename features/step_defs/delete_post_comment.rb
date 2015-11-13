@@ -3,12 +3,11 @@ require 'capybara/cucumber'
 #Cannot Delete a Comment
 
 When(/^I am on the comment page of a post$/) do 
-  click_on 'A New Post'
+  click_on 'New Post'
 end
 
 Then(/^the delete comment button is not available$/) do
   expect(page).to_not have_text("Delete")
- 
 end
 
 #Can Delete a comment
@@ -21,13 +20,15 @@ When(/^I login as Admin login$/) do
 end
 
 When(/^I am on the comment page on a post$/) do
-  click_link('A New Post')
-  
+  find_link 'New Post'
+  click_link('New Post')  
 end
 
 When(/^select the Delete button$/) do
-  click_link('Delete', match: :first)
-  page.driver.browser.switch_to
+  click_link('Delete')
+  page.driver.browser.switch_to.alert.accept
+  expect(page.evaluate_script('window.confirmMsg')).to eq('Are you sure?')
+  #expect(page).to have_text("The page at localhost:3000 says:")
   accept_confirm do
       click_link 'Ok'
     end
@@ -40,7 +41,6 @@ end
 #end
 #     raise "Condition not met within #{wait} seconds"
 #   end
-
 
 
 When(/^I ok the dialog$/) do

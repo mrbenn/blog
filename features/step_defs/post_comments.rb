@@ -1,35 +1,36 @@
-@postcomm
-require 'capybara/cucumber'
+include Base
 
 Given(/^a blog post is present on the blog post page$/) do
- 
-  click_on 'Admin Login'
-  fill_in 'Email', :with => 'ben@ben.com'
-  fill_in 'Password', :with => 'testtest'
-  click_on 'Log in'
-  click_on 'New Post'
-  fill_in 'post_title', :with => 'New Post'
-  fill_in 'post_body', :with => 'Body'
-  click_on 'Create Post'
+
+  @home = Home.new#("home","admin_login")
+  @home.admin_btn.click
+
+  @admin = Admin.new #("admin, email, password, login_btn")
+  @admin.email.set "ben@ben.com"
+  @admin.password.set "testtest"
+  @admin.login_btn.click
+  @admin.new_btn.click
+  @admin.title.set "look at this"
+  @admin.body.set "something"
+  @admin.create_btn.click
  
 end
 
-#When(/^I select a blog post$/) do
-#  click_on 'A New Post' 
-#end
-
 When(/^I enter a valid value into Name field$/) do
-  fill_in 'comment_name', :with => 'A new comment'
+  @comment = Comments.new 
+  @comment.create_btn.click
 end
 
 When(/^I enter a valid comment into Body field$/) do
-  fill_in 'comment_body', :with => 'Its a new comment'
+  @comment.name.set "this is the name"
 end
 
 When(/^select the create comment button$/) do
-  click_on 'Create Comment'
+  @comment.body.set "this is the body"
 end
 
 Then(/^a new comment is added to the existing blog post$/) do
-   expect have_content 'A new comment'
+   expect(@comment).to be_displayed
+   #expect have_content 'A new comment'
+   expect(@comment.search_result_links).to include "http://localhost:3000/posts"
 end

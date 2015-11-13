@@ -1,0 +1,8 @@
+require 'site_prism'
+
+	class Newpost < SitePrism::Page
+  
+  		element :search_field, "post_title['New Post']"
+  		element :search_field, "['']"  
+  
+	end

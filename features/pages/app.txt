@@ -1,0 +1,11 @@
+class App
+
+	def home
+		Home.new
+	end
+
+	def admin
+		Admin.new
+	end
+
+end

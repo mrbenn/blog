@@ -1,10 +1,22 @@
+#require 'capybara'
+#require 'capybara/cucumber'
+#require 'selenium-webdriver'
+#require 'site_prism'
+
+
+#require 'cucumber/rails'
+require 'capybara'  
 require 'capybara/cucumber'
+require 'selenium-webdriver' 
+require 'site_prism'
+require 'capybara/dsl'
+
+
 Capybara.default_driver = :selenium
 
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
-
 
 Capybara.configure do |config|
   config.default_driver = :selenium
@@ -25,5 +37,5 @@ end
   
   
 After do
-  #ßpage.driver.browser.close
+ Capybara.current_session.driver.reset!
 end
