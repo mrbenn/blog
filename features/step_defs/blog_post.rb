@@ -2,36 +2,46 @@
 
 #Add a new post
 When(/^I am logged in as Admin$/) do
-  click_on 'Admin Login'
-  fill_in 'Email', :with => 'ben@ben.com'
-  fill_in 'Password', :with => 'testtest'
-  click_on 'Log in'
+  @home = Home.new#("home","admin_login")
+  @home.admin_btn.click
+
+
+  @admin = Admin.new #("admin, email, password, login_btn")
+  @admin.email.set "ben@ben.com"
+  @admin.password.set "testtest"
+  @admin.login_btn.click
+
 end
 
 When(/^I select the new post button$/) do
-  click_on 'New Post'
+  @admin.new_btn.click
 end 
 
 When(/^I fill in the title and body$/) do
-  fill_in 'post_title', :with => 'A New Post'
-  fill_in 'post_body', :with => 'Body'
+  @admin.title.set "look at this"
+  @admin.body.set "something"
 end
 
 When(/^select the create post button$/) do 
-   click_on 'Create Post'
+   @admin.create_btn.click
 end
 
 Then(/^the new post is added$/) do
   expect have_content 'Submitted less than a minute Ago | Edit | Delete'
+  #
   click_on 'Logout'
 end
 
 #New Post not available
 
 When(/^not logged in as admin$/) do
-  expect have_content("Admin Login")  
+  @admin = Admin.new
+  expect(@admin).to have_content 'Admin Login'  
+  @admin.hey
 end
 
 Then(/^the New Post button is not available$/) do
-  expect(page).to_not have_button("New Post") 
+  #expect(page).to eq("New Post")
+  #expect(@admin.create_btn).to_not be_displayed 
+  expect(@admin).to_not have_content 'New Post'
 end

@@ -1,7 +1,6 @@
 include Base
 
 Given(/^a blog post is present on the blog post page$/) do
-
   @home = Home.new#("home","admin_login")
   @home.admin_btn.click
 
@@ -13,7 +12,6 @@ Given(/^a blog post is present on the blog post page$/) do
   @admin.title.set "look at this"
   @admin.body.set "something"
   @admin.create_btn.click
- 
 end
 
 When(/^I enter a valid value into Name field$/) do
@@ -30,7 +28,7 @@ When(/^select the create comment button$/) do
 end
 
 Then(/^a new comment is added to the existing blog post$/) do
-   expect(@comment).to be_displayed
+   #expect(@comment).to be_displayed
    #expect have_content 'A new comment'
-   expect(@comment.search_result_links).to include "http://localhost:3000/posts"
+   expect(@comment).to have_content "A new comment"
 end

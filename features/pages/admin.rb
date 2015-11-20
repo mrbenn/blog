@@ -1,6 +1,11 @@
 module Base
 
 	class Admin < SitePrism::Page
+
+		#debug yeah baby
+		def hey
+			puts "hello"			
+		end
   
 		attr_accessor :admin, :email, :password, :login_btn, :new_btn, 
 					  :title, :body, :create_btn

@@ -9,6 +9,8 @@ module Base
 		#	@admin_btn = admin_btn
 		#end
 
+
+
 		element :admin_btn, :class, "#sidebar > p > a"
 		
 	end 
