@@ -28,7 +28,5 @@ When(/^select the create comment button$/) do
 end
 
 Then(/^a new comment is added to the existing blog post$/) do
-   #expect(@comment).to be_displayed
-   #expect have_content 'A new comment'
-   expect(@comment).to have_content "A new comment"
+   expect(@comment).to have_content 'A new comment'
 end

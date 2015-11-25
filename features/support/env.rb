@@ -4,13 +4,15 @@
 #require 'site_prism'
 
 
-#require 'cucumber/rails'
+require 'cucumber/rails'
 require 'capybara'  
 require 'capybara/cucumber'
 require 'selenium-webdriver' 
 require 'site_prism'
 require 'capybara/dsl'
+require 'factory_girl_rails'
 
+World(FactoryGirl::Syntax::Methods)
 
 Capybara.default_driver = :selenium
 

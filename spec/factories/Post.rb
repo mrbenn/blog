@@ -1,8 +1,8 @@
 FactoryGirl.define do 
   
-  factory :post do |post|
-     post.title "The Post man knocks twice"
-     post.body "Hey you have post" 
+  factory :post do
+     title "The Post man knocks twice"
+     body "Hey you have post" 
    end
    
    factory :postbad do |postbad|

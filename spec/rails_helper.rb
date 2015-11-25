@@ -8,6 +8,7 @@ require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
 require 'capybara/dsl'
+require 'factory_girl_rails'
 
 
 
@@ -16,7 +17,6 @@ ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../../config/environment', __FILE__)
 # Add additional requires below this line. Rails is not loaded until this point!
-
 
 RSpec.configure do |config|
     config.infer_spec_type_from_file_location!
@@ -43,7 +43,7 @@ end
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  #config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
 
 

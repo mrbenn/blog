@@ -1,22 +1,40 @@
 require 'capybara/cucumber'
 
-#Cannot Delete a Comment
-
 When(/^I am on the comment page of a post$/) do 
-  click_on 'New Post'
+
+  @home = Home.new#("home","admin_login")
+  @home.admin_btn.click
+
+
+  @admin = Admin.new #("admin, email, password, login_btn")
+  @admin.email.set "ben@ben.com"
+  @admin.password.set "testtest"
+  @admin.login_btn.click
+  #click_on 'New Post'
+
 end
 
 Then(/^the delete comment button is not available$/) do
-  expect(page).to_not have_text("Delete")
+  expect(@admin.page).to_not have_content 'Delete'
 end
 
 #Can Delete a comment
 
 When(/^I login as Admin login$/) do 
-  click_on 'Admin Login'
-  fill_in 'Email', :with => 'ben@ben.com'
-  fill_in 'Password', :with => 'testtest'
-  click_on 'Log in'
+
+  post = FactoryGirl.build(:post)
+  @home = Home.new#("home","admin_login")
+  @home.admin_btn.click
+
+
+  @admin = Admin.new #("admin, email, password, login_btn")
+  @admin.email.set "ben@ben.com"
+  @admin.password.set "testtest"
+  @admin.login_btn.click
+  #click_on 'Admin Login'
+  #fill_in 'Email', :with => 'ben@ben.com'
+  #fill_in 'Password', :with => 'testtest'
+  #click_on 'Log in'
 end
 
 When(/^I am on the comment page on a post$/) do
@@ -41,7 +59,6 @@ end
 #end
 #     raise "Condition not met within #{wait} seconds"
 #   end
-
 
 When(/^I ok the dialog$/) do
 

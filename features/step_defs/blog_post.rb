@@ -27,8 +27,7 @@ When(/^select the create post button$/) do
 end
 
 Then(/^the new post is added$/) do
-  expect have_content 'Submitted less than a minute Ago | Edit | Delete'
-  #
+  expect(@admin.page).to have_content 'Submitted less than a minute Ago | Edit | Delete'
   click_on 'Logout'
 end
 
@@ -36,12 +35,10 @@ end
 
 When(/^not logged in as admin$/) do
   @admin = Admin.new
-  expect(@admin).to have_content 'Admin Login'  
-  @admin.hey
+  expect(@admin.page).to have_content 'Admin Login'  
+  #@admin.hey
 end
 
 Then(/^the New Post button is not available$/) do
-  #expect(page).to eq("New Post")
-  #expect(@admin.create_btn).to_not be_displayed 
-  expect(@admin).to_not have_content 'New Post'
+  expect(@admin.page).to_not have_content 'New Post'
 end
