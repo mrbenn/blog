@@ -51,4 +51,5 @@ group :development, :test do
   gem 'chromedriver-helper', '~> 1.0.0'
   gem 'site_prism'
   gem 'cucumber'
+  gem 'faker'
 end

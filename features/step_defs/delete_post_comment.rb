@@ -1,4 +1,5 @@
 require 'capybara/cucumber'
+#require 'factory_girl_rails'
 
 When(/^I am on the comment page of a post$/) do 
 
@@ -22,7 +23,9 @@ end
 
 When(/^I login as Admin login$/) do 
 
-  post = FactoryGirl.build(:post)
+  comment = build(:comment)
+  @admin = Admin.new
+  @admin.hey
   @home = Home.new#("home","admin_login")
   @home.admin_btn.click
 
@@ -31,13 +34,12 @@ When(/^I login as Admin login$/) do
   @admin.email.set "ben@ben.com"
   @admin.password.set "testtest"
   @admin.login_btn.click
-  #click_on 'Admin Login'
-  #fill_in 'Email', :with => 'ben@ben.com'
-  #fill_in 'Password', :with => 'testtest'
-  #click_on 'Log in'
+
 end
 
 When(/^I am on the comment page on a post$/) do
+  #main_content > div.post_wrapper > h2
+
   find_link 'New Post'
   click_link('New Post')  
 end

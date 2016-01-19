@@ -21,6 +21,8 @@ require File.expand_path('../../config/environment', __FILE__)
 RSpec.configure do |config|
     config.infer_spec_type_from_file_location!
     config.render_views
+    config.include FactoryGirl::Syntax::Methods
+    World(FactoryGirl::Syntax::Methods)
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
