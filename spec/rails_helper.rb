@@ -1,15 +1,15 @@
-require 'spec_helper'
 require 'rspec/rails'
+require 'cucumber/rails'
 require 'devise'
 
 require 'capybara'
-require 'capybara/dsl'
-require 'capybara/cucumber'
-require 'selenium-webdriver'
-require 'site_prism'
-require 'capybara/dsl'
-require 'factory_girl_rails'
-
+#require 'capybara/dsl'
+#require 'capybara/cucumber'
+#require 'selenium-webdriver'
+#require 'site_prism'
+#require 'capybara/dsl'
+#require 'factory_girl_rails'
+require 'capybara-screenshot'
 
 
 #a This file is copied to spec/ when you run 'rails generate rspec:install'
@@ -22,7 +22,7 @@ RSpec.configure do |config|
     config.infer_spec_type_from_file_location!
     config.render_views
     config.include FactoryGirl::Syntax::Methods
-    World(FactoryGirl::Syntax::Methods)
+    #World(FactoryGirl::Syntax::Methods)
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

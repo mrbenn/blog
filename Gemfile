@@ -45,11 +45,12 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'selenium-webdriver'
   gem 'guard-rspec'
   gem 'chromedriver-helper', '~> 1.0.0'
   gem 'site_prism'
   gem 'cucumber'
   gem 'faker'
+  gem 'capybara-screenshot'
 end

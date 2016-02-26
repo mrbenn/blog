@@ -61,7 +61,7 @@ end
 #end
 #     raise "Condition not met within #{wait} seconds"
 #   end
-
+  
 When(/^I ok the dialog$/) do
 
 end
