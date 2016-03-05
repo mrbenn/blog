@@ -43,7 +43,7 @@ gem 'rack'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'selenium-webdriver'

@@ -249,7 +249,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise (~> 3.4.1)
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   faker
   guard-rspec
   jbuilder (~> 2.0)
