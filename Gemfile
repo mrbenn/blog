@@ -53,4 +53,5 @@ group :development, :test do
   gem 'cucumber'
   gem 'faker'
   gem 'capybara-screenshot'
+  gem 'pry-byebug'
 end

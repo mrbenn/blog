@@ -3,11 +3,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order('created_at DESC')
   end
-
+  
+  #Show a new post
   def new
     @post = Post.new
   end
   
+  #create a new tweet
   def create
     @post = Post.new(post_params)
     
@@ -18,14 +20,17 @@ class PostsController < ApplicationController
     end
   end
   
+  #show a single post
   def show
     @post = Post.find(params[:id])
   end
 
+  #Show an edit of a post
   def edit  
     @post = Post.find(params[:id])
   end
   
+  #update a post
   def update
     @post = Post.find(params[:id])
     
@@ -36,6 +41,7 @@ class PostsController < ApplicationController
     end
   end
   
+  #destory a post
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

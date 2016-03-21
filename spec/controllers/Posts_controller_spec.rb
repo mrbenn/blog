@@ -1,26 +1,22 @@
 require 'spec_helper'
 
 
-describe PostsController, :type => :controller do 
+describe PostsController, :type => :controller do  
   
-  
-  it "loads all of the posts into @posts" do
-    
+  it "ups the count when creating new post" do
     @post = create(:post)
-    
-    
-    
-    #expect(:post).to have_attributes([:title, :body])
-    
-    #post = post(:post)
-    #get :new
-    
-    
-    
-    #post1, post2 = Post.create!, Post.create!
-    #get :index
+    expect(Post.count).to eq(1)
+  end
 
-    #expect(assigns(:posts)).to match_array([post1, post2])
+  it "it creates" do
+    
+    #@post = create(:post)    
+    @post = Post.create()
+    #byebug
+    #expect(response).to eq(:title, :body)
+    #create_account = Account.create(account: @acc, user: @user)
+    
+    #expect(Post.count) 
   end
 
     it "responds successfully" do
@@ -31,15 +27,7 @@ describe PostsController, :type => :controller do
     it "renders the index template" do
       get :index
       expect(response).to render_template("index")
+      #expect(response).to eq(:title)
     end
-     
-    it "creates a new post" do
-           
-      #    post = factory(:post)
-      #    get :index
-      #    assigns(:posts).should eq([post])
-      #@Post =  Post.new()
-      #expect(response).be_a_new(post)
-    end
-          
+
   end
