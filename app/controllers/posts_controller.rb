@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   
-  #create a new tweet
+  #create a new post
   def create
     @post = Post.new(post_params)
     

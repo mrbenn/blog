@@ -6,9 +6,9 @@ FactoryGirl.define do
     body "Here's some txt"
   end
   
-  factory :invalid_post do
-    title "nil"
-    body "Here's some txt"
-  end
+  #factory :invalid_post do
+  #  title "nil"
+  #  body "Here's some txt"
+  #end
   
 end
