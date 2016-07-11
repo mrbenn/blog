@@ -15,7 +15,7 @@ Given(/^a blog post is present on the blog post page$/) do
 end
 
 When(/^I enter a valid value into Name field$/) do
-  @comment = Comments.new 
+  @comment = Comments.new
   @comment.create_btn.click
 end
 
@@ -24,7 +24,8 @@ When(/^I enter a valid comment into Body field$/) do
 end
 
 When(/^select the create comment button$/) do
-  @comment.body.set "this is the body"
+  @comment.body.set "A new comment"
+  @comment.create_btn.click
 end
 
 Then(/^a new comment is added to the existing blog post$/) do

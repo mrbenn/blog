@@ -13,7 +13,7 @@ end
 
 
 When(/^I edit an existing post$/) do
-  click_link('A New Post', match: :first)
+  click_link('look at this', match: :first)
   expect have_content 'Submitted less than a minute Ago | Edit | Delete'
   click_on 'Edit'
   fill_in 'post_body', :with => 'Edited existing post'
@@ -34,7 +34,7 @@ Given (/^I am on the home page/) do
 end
 
 When(/^I am not logged in on a blog post/) do 
-  click_link 'A New Post'
+  click_link 'look at this'
 end
 
 Then(/^the edit button is not available$/) do  

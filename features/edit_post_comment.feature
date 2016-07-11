@@ -13,3 +13,4 @@ Feature: Editing posts
 			Given I am on the home page
 			When I am not logged in on a blog post	
 			Then the edit button is not available
+			
