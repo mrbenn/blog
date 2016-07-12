@@ -2,10 +2,10 @@
 
 Feature: Delete post comments
 	
-	#Scenario: Cannot delete a comment unless Admin Login
+	Scenario: Cannot delete a comment unless Admin Login
 	
-	#	When I am on the comment page of a post
-	#	Then the delete comment button is not available
+		When I am on the comment page of a post
+		Then the delete comment button is not available
 		
 	Scenario: Can delete a comment
 	
