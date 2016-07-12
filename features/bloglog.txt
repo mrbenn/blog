@@ -11,6 +11,7 @@
 # When the app crashes catch it and restarted the browser
 # Start a fresh browser after every test
 # Add users to App
+#create wait for function
 
 
 # was the web request successful?

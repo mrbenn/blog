@@ -11,6 +11,5 @@ Feature: Delete post comments
 	
 		When I login as Admin login
 		And I am on the comment page on a post
-		And select the Delete button
-		And I ok the dialog
+		And I delete the comment
 		Then the comment is deleted
