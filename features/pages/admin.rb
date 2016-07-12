@@ -10,7 +10,6 @@ module Base
 		attr_accessor :admin, :email, :password, :login_btn, :new_btn, 
 					  :title, :body, :create_btn
 
-
  		element :email, :class, "#user_email"
  		element :password, :class, "#user_password"
  		element :login_btn, :class, "#new_user > div.actions > input[type=submit]"
