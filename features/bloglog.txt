@@ -2,16 +2,16 @@
 
 # Edit post (done)
 # Remove gash from bottom of home page
-# Make cucs atomic for running - sort out the ordering (this will mean creating page objects or modules using site prism)
+# Make cucs atomic for running - sort out the ordering (this will mean creating page objects or modules using site prism) - (done)
 # build stubbs
 # fix and add Factoy Girl data (stubbs)
 # Puppetise the solution
-# Fix the alert popup on the delete comments page
+# Fix the alert popup on the delete comments page (done)
 # Design Add the logic for the global logout to env.rb
 # When the app crashes catch it and restarted the browser
 # Start a fresh browser after every test
 # Add users to App
-#create wait for function
+#create wait for function - use sleep instead
 
 
 # was the web request successful?
